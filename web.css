@@ -11,6 +11,16 @@
 section{
   padding: 3.5rem 0 1.5rem;
 }
+/* scrokk bar */
+::-webkit-scrollbar{
+  width: 0.5rem;
+  background: #fff;
+}
+::-webkit-scrollbar-thumb{
+  width: 0.5rem;
+  background: #954c38;
+  border-radius: 5rem;
+}
 img{
   width: 100%;
 }
@@ -651,7 +661,24 @@ a {
 }
 .social{
   display: flex;
-  margin-top: 30px;
+  column-gap: 0.2rem;
+
+}
+.social .bx{
+padding: 8px ;
+background: rgb(40, 38, 70);
+color:#fff;
+border-radius: 5rem;
+font-size: 18px;
+}
+.social .bx:hover{
+  background: #fff;
+  color: rgb(40, 38, 70);
+  transition: 0.2s all linear;
+}
+.copyright{
+  text-align: center;
+  padding: 20px;
 }
 
 
