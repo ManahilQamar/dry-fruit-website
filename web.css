@@ -376,28 +376,7 @@ a {
 
 
 
-.WhatsApp {
-    display: block;
-    font-size: 14px;
-    color: gray;
-    text-decoration: none;
-    font-weight: 400;
-    position: absolute;
-    right: 40px;
-    top: 20px;
 
-}
-
-.num {
-    color: rgb(33, 31, 31);
-    white-space: nowrap;
-    font-size: 16px;
-    font-weight: 700;
-    line-height: 1.2;
-    position: absolute;
-    right: 20px;
-    top: 40px;
-}
 
 .logo-img {
     border-radius: 50%;
@@ -645,8 +624,25 @@ a {
     text-decoration: none;
   }
   .navFooterBackToTopText :hover{
-   color: aqua;
+   color: gainsboro;
   }
+  #footer-widgets  .bx-phone {
+    
+    position: relative;
+    font-size: 30px;
+    top: 30px;
+}
+
+.num {
+    color: rgb(255, 252, 252);
+    white-space: nowrap;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.2;
+    position: relative;
+    top: 30px;
+    left: 1rem;
+}
   
 @media screen and (max-width: 768px) {
     #footer-widgets {
