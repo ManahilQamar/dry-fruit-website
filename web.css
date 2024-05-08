@@ -304,28 +304,30 @@ a {
   margin-right: auto;
   text-align: center;
 }
+.Customers h2{
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 .Customers-container{
   display: grid;
   grid-template-columns: repeat(auto-fit,minmax(260px,auto));
   gap: 1.5rem;
   margin-top: 2rem;
 }
-.Customers-container .box img{
-  width: 40px;
-  height: 40px;
-  object-fit: contain;
-  object-position: center;
-  border-radius: 50%;
-  position: relative;
-  top: 22px;
-}
+
 .Customers-container .box{
   padding: 20px;
   border-radius: 7px;
   box-shadow: 1px 2px 11px 4px rgba(0, 0, 0, 0.15);
+  border-bottom: 7px solid #c44e2d;
 }
+.Customers-container .box:hover{
+  transform: translateY(10px);
+  transition: 0.2s all linear;
+}
+
 .Customers-container .box .star{
-  color: gold;
+  color: #c44e2d;
 }
 .Customers-container .btn {
   width: 9rem;
@@ -334,7 +336,22 @@ a {
   text-align: center;
   align-items: center;
 }
-
+.review-profile{
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+  column-gap: 0.5rem;
+}
+.review-profile img{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+ 
+}
+.review-profile h3{
+  font-size: 1rem;
+  font-weight: 600;
+}
 
 
 
@@ -534,7 +551,7 @@ a {
 }
 .footer{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(1rem, 4fr));
     gap: 2rem;
     background-color: #171a28;
     height: 400px;
@@ -543,7 +560,7 @@ a {
   .footer-sidebar {
     width: 63%; /* Adjust as needed */
 
-    margin: 22px;
+    
     
   }
   
@@ -555,13 +572,42 @@ a {
     color: white;
   }
   
-  .textwidget {
-    display: flex;
-    padding: 12px;
-    margin-top: 20px;
+  .Subscribe {
+    display: inline;
+    padding: 0.5px;
+    margin-top: 0px;
     font-size: 14px;
     color: #fff;
   }
+  .Subscribe h6{
+    margin-top: 20px;
+  }
+  .Search {
+    margin: 20px;
+    height: 34px;
+    min-width: 200px;
+    position: relative;
+    right: 2rem;
+    border: 1px solid rgb(14, 9, 32);
+    border-radius: 5px;
+
+}
+
+.submit {
+    cursor: pointer;
+    height: 27px;
+    float: right;
+    min-width: 70px;
+    border: none;
+    font-weight: 400;
+    position: relative;
+    bottom: 50px;
+    left: 2rem;
+    background: rgb(14, 9, 32);
+    color: white;
+    border-radius: 5px;
+
+}
   
   /* Additional styles for links */
   .footer-sidebar a {
@@ -602,6 +648,10 @@ a {
         max-width: 90%;
         margin: 0 auto; /* Centers the widgets on smaller screens */
     }
+}
+.social{
+  display: flex;
+  margin-top: 30px;
 }
 
 
