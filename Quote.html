@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quote Generator</title>
+</head>
+<style>
+    body {
+  font-family: Arial, sans-serif;
+  display: block;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  
+}
+
+
+#generate-quote-btn {
+  background-color: #f803a2;
+  color: #ffffff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  position: relative;
+  left: 480px;
+}
+
+#quote-container {
+    font-size: 24px;
+    font-style: italic;
+    margin-top: 20px;
+    text-align: center;
+
+}
+.container span{
+color: black;
+font-size: 22px;
+}
+</style>
+<body>
+  <div class="container">
+        <h1 style=" text-align: center; color: #f803a2;"><span> Motivational</span>
+          <br> Quote Generator</h1>
+        <button id="generate-quote-btn">Generate Quote</button>
+        <div id="quote-container"></div>
+</div>
+  <script >
+
+const quotes = [
+  '"Work hard, be kind, and amazing things will happen."',
+  '"Never give up, and be confident in what you do"',
+  '"The future belongs to those who believe in the beauty of their dreams." ',
+  '"Success is not final, failure is not fatal: It is the courage to continue that counts."',
+  '"Don\'t watch the clock; do what it does. Keep going."'
+];
+
+const quoteBtn = document.getElementById('generate-quote-btn');
+const quoteContainer = document.getElementById('quote-container');
+
+quoteBtn.addEventListener('click', () => {
+  const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+  quoteContainer.innerText = randomQuote;
+});
+
+document.write(getRandomQuote());
+
+  </script>
+</body>
+
+
+
