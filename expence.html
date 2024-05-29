@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prayer Time App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            text-align: center;
+            background-color: #2e2b2b;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        form {
+            margin-bottom: 20px;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            margin: 5px;
+            border: 1px solid #464444;
+            border-radius: 4px;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            background-color: #007BFF;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #prayer-times {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 5px;
+            column-gap: 25px;
+            justify-items: center;
+            align-items: center;
+        }
+
+        .prayer-time {
+            margin: 10px 0;
+            font-size: 18px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            width: 100%;
+            background-color: #fafafa;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Prayer Times</h1>
+        <form id="location-form">
+            <input type="text" id="city" placeholder="Enter city" required>
+            <input type="text" id="country" placeholder="Enter country" required>
+            <button type="submit">Get Prayer Times</button>
+        </form>
+        <div id="prayer-times">
+            <!-- Prayer times will be inserted here -->
+        </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const form = document.getElementById('location-form');
+            const prayerTimesContainer = document.getElementById('prayer-times');
+
+            form.addEventListener('submit', function(event) {
+                event.preventDefault();
+                const city = document.getElementById('city').value;
+                const country = document.getElementById('country').value;
+                fetchPrayerTimes(city, country);
+            });
+
+            function fetchPrayerTimes(city, country) {
+                const apiURL = `http://api.aladhan.com/v1/timingsByCity?city=${city}&country=${country}&method=2`;
+                
+                fetch(apiURL)
+                    .then(response => response.json())
+                    .then(data => {
+                        displayPrayerTimes(data.data.timings);
+                    })
+                    .catch(error => {
+                        console.error('Error fetching prayer times:', error);
+                        prayerTimesContainer.innerHTML = `<p>Error fetching prayer times. Please try again.</p>`;
+                    });
+            }
+
+            function displayPrayerTimes(timings) {
+                prayerTimesContainer.innerHTML = ''; // Clear previous results
+                for (let prayer in timings) {
+                    const prayerTime = document.createElement('div');
+                    prayerTime.classList.add('prayer-time');
+                    prayerTime.innerHTML = `<strong>${prayer}</strong>: ${convertTo12HourFormat(timings[prayer])}`;
+                    prayerTimesContainer.appendChild(prayerTime);
+                }
+            }
+
+            function convertTo12HourFormat(time) {
+                let [hours, minutes] = time.split(':');
+                let period = 'AM';
+                hours = parseInt(hours);
+
+                if (hours >= 12) {
+                    period = 'PM';
+                    if (hours > 12) {
+                        hours -= 12;
+                    }
+                } else if (hours === 0) {
+                    hours = 12;
+                }
+
+                return `${hours}:${minutes} ${period}`;
+            }
+        });
+    </script>
+</body>
+</html>

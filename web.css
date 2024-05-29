@@ -28,7 +28,7 @@
   height: 100px;
 }
 section{
-  padding: 3.5rem 0 1.5rem;
+  padding: 5rem 0 1.5rem;
 }
 /* scrokk bar */
 ::-webkit-scrollbar{
@@ -59,28 +59,30 @@ body{
 
 
 .logo-img {
-  border-radius: 50%;
-  height: 50px;
-  width: 50px;
+  height: 60px;
+  width: 9rem;
   object-fit: cover;
-  margin-left: 90px;
+  margin-left: 3rem;
+  position: static;
   /* Ensures the image covers the area without stretching */
 }
 
-/* Updated .logo class */
-.logo {
- 
-  text-decoration: none;
-  color: rgb(87, 77, 77);
-  margin-right: 20px;
-}
 
 .logo-name-container {
   display: flex;
   align-items: center;
+  border: 1px solid black;
+  width: 100%;
+  top: 0;
+  left: 0;
+  box-shadow: 0 1px 16px hsla(218, 55%, 24%, .1);
+  background-color: #fff;
+  
+  position: fixed;
+  transition: top .4s;
 }
 
-
+/* 
 .dryfruit {
   font-family: Times;
   font-size: x-large;
@@ -88,7 +90,7 @@ body{
   background: saddlebrown;
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
-}
+} */
 
 .icons{
   display: flex;
@@ -97,9 +99,8 @@ body{
   gap: 1rem;
   font-size: 20px;
   cursor: pointer;
-  z-index: 10001;
-  position: relative;
-  right: -30rem;
+  position: absolute;
+  right: 3rem;
   
 }
 
@@ -138,50 +139,36 @@ body{
     font-size: 14px;
     color: var(--mf-gray-color);
     font-weight: 400;
-}
-
-.navbar {
-  display: flex;
-  justify-content: center;
-    background: transparent;
-    overflow: hidden;
-    backdrop-filter: blur(10px);
-    border: 1px solid gray;
-    position: sticky;
-width: 100%;
-}
+  }
+  
+  .tag {
+   
+    
+  }
+  a {
+      text-decoration: none;
+  }
 
 
-.navbar a {
-    float: left;
-    display: block;
+
+.tag a {
     color: rgb(87, 77, 77);
-    text-align: center;
-    padding: 14px 20px;
+    padding: 10px 20px;
     text-decoration: none;
 }
 
-.navbar a:hover {
+.tag a:hover {
     background-color: #f36f6f;
     color: black;
     border-radius: 2rem;
     transition: 1s all ease;
 }
 
-a {
-    text-decoration: none;
-}
-.tag {
-  display: flex;
-  justify-content: center;
-
-}
-
           /* navigation for mob  */
 
 
 @media screen and (max-width:1023px){
-.navbar{
+.tag{
   position: fixed;
   top: 0;
   left: 0;
