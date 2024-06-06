@@ -147,10 +147,11 @@ z-index: 2;
 }
 
 .tag a:hover {
-    background-color: #938c8c;
-    color:white;
-    border-radius: 2rem;
-    transition: 0.5s all ease;
+  border-radius: 20px;
+  box-shadow:  2px 2px 2px 2px rgb(219, 219, 210);
+  /* filter: drop-shadow(20px 20px 30px yellow); */
+
+    /* transition: 1s all ease-out; */
 }
 
           /* navigation for mob  */
@@ -382,12 +383,13 @@ z-index: 2;
   font-size: 14px;
   top: 17.7rem;
   color: #000;
-}.products2-container .box .bx-cart-alt {
+}
+.products2-container .box .bx-cart-alt {
   position: absolute; /* Absolute positioning for proper placement */
   left: 16.5rem;         /* Adjust to fit within the box */
   top: 19.4rem;       /* Placed at the bottom */
   padding: 10px;
-  background: #747272;
+  background: rgb(147, 64, 4);
   font-size: 20px;
   border-radius: 0.5rem 0 0.5rem 0;
   color: white;
@@ -395,7 +397,7 @@ z-index: 2;
 }
 
 .products2-container .box .bx-cart-alt:hover {
-  background: #131313;
+  background: #3e3d3d;
 }
 
 
@@ -447,8 +449,37 @@ z-index: 10;
   margin-right: auto;
   text-align: center;
 }
+
+
+.Customers-container .box .bxs-star{
+  color: #c44e2d;
+  position: relative;
+  left: 5.2rem;
+  bottom: 4.7rem;
+}
+.Customers-container .box .bxs-star-half{
+  color: #c44e2d;
+  position: relative;
+  left: 5.2rem;
+  bottom: 4.7rem;
+}
+.Customers-container img{
+  width: 20%;
+  height: 40%;
+  border-radius: 50%;
+  position: relative;
+  right:5.5rem;
+  top: 1rem;
+
+
+}
+
+
 .Customers h2{
-  font-family: Arial, Helvetica, sans-serif;
+  position: relative;
+  bottom: 1rem;
+  left: 1rem;
+  font-size: 22px;
 }
 
 .Customers-container{
@@ -461,6 +492,7 @@ z-index: 10;
 .Customers-container .box{
   padding: 20px;
   border-radius: 7px;
+  background-color: white;
   box-shadow: 1px 2px 11px 4px rgba(0, 0, 0, 0.15);
   border-bottom: 7px solid #c44e2d;
 }
@@ -469,9 +501,6 @@ z-index: 10;
   transition: 0.2s all linear;
 }
 
-.Customers-container .box .star{
-  color: #c44e2d;
-}
 .Customers-container .btn {
   width: 9rem;
   display: flex;
@@ -479,6 +508,7 @@ z-index: 10;
   text-align: center;
   align-items: center;
 }
+
 .review-profile{
   display: flex;
   align-items: center;

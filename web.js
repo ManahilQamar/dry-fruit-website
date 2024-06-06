@@ -16,6 +16,16 @@ callback: cb
 })();
 
 
+// search............
+
+
+
+
+
+
+
+
+
 
 const categories = {
   1: ['Apple', 'Apple is a good fruit', 'almand.jpg',],
@@ -125,6 +135,60 @@ Object.values(products).forEach(product => {
   box.appendChild(discount); // Add the discount element to the box
   productsContainer.appendChild(box);
 });
+
+
+
+
+
+
+
+
+const customers = {
+  1: ['John Doe', 'date.jpg', 'Great service and excellent products!'],
+  2: ['Jane Smith', 'date.jpg', 'The best place to buy dry fruits. Highly recommended!'],
+  3: ['Alice Johnson', 'date.jpg', 'Amazing quality and fast delivery.'],
+};
+
+const customersContainer = document.querySelector('.Customers-container');
+
+Object.values(customers).forEach(customer => {
+  const box = document.createElement('div');
+  box.classList.add('box');
+  box.style.position = 'relative';
+
+  const img = document.createElement('img');
+  img.src = customer[1];
+  img.alt = customer[0];
+
+  const h2 = document.createElement('h2');
+  h2.textContent = customer[0];
+  
+  const star1 = document.createElement('i');
+  star1.classList.add('bx', 'bxs-star');
+
+  const star2 = document.createElement('i');
+  star2.classList.add('bx', 'bxs-star');
+
+  const star3 = document.createElement('i');
+  star3.classList.add('bx', 'bxs-star');
+
+  const star4 = document.createElement('i');
+  star4.classList.add('bx', 'bxs-star-half');
+
+
+  const span = document.createElement('span');
+  span.textContent = customer[2];
+
+  box.appendChild(img);
+  box.appendChild(h2);
+  box.appendChild(star1);
+  box.appendChild(star2);
+  box.appendChild(star3);
+  box.appendChild(star4);
+  box.appendChild(span);
+  customersContainer.appendChild(box);
+});
+
 
 
 //............ swiper.................//
