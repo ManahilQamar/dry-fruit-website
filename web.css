@@ -125,23 +125,6 @@ z-index: 2;
 
 }
 
-.search-container {
-  display: flex;
-  justify-content: center;
-  padding: 20px;
-  margin-bottom: 20px;
-  z-index: 10; /* Add this to bring it to the front */
-}
-
-.search-container input[type="text"] {
-  padding: 10px;
-  width: 80%;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 1rem;
-  z-index: 10; /* Ensure input is in front */
-}
-
 .site-header .extras-menu .menu-item-hotline .hotline-content label {
     display: block;
     font-size: 14px;

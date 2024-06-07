@@ -16,17 +16,6 @@ callback: cb
 })();
 
 
-// search............
-$(document).ready(function() {
-  $('#myinput').on('input', function() {
-    var query = $(this).val().toLowerCase();
-    // Example of filtering products based on the search query
-    $('.products2-container .box').each(function() {
-      var itemText = $(this).text().toLowerCase();
-      $(this).toggle(itemText.includes(query));
-    });
-  });
-});
 
 
 
