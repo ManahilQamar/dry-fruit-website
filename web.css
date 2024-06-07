@@ -81,47 +81,66 @@ z-index: 2;
   -webkit-background-clip: text;
 } */
 
-.icons{
+
+
+#heart-icon{
   display: flex;
-  /* justify-content: end; */
-  /* align-items: center; */
-  gap: 1rem;
+  font-size: 20px;
+  cursor: pointer;
+  position: absolute;
+  right: 7rem;
+}
+#heart-icon:hover{
+  font-size: 23px;
+
+}
+#cart-icon{
   font-size: 20px;
   cursor: pointer;
   position: absolute;
   right: 3rem;
-  
 }
+#cart-icon:hover{
+    font-size: 23px;
 
-/* #menu-icon{
-  font-size: 24px;
+}
+#search-icon{
+  position: absolute;
+  right: 5rem;
+  font-size: 20px;
   cursor: pointer;
-  z-index: 10001;
-  display:none ;
-} */
-/* .search-field {
-    margin: 20px;
-    height: 35px;
-    min-width: 500px;
-    border: 1px solid rgb(158, 148, 148);
-    border-radius: 12px;
+ 
+}
+#search-icon:hover{
+  font-size: 23px;
+}
+#menu-icon{
+  font-size: 20px;
+  cursor: pointer;
+  position: absolute;
+  right: 1rem;
+}
+#menu-icon:hover{
+  font-size: 23px;
+
 }
 
-.search-submit {
-    cursor: pointer;
-    height: 42px;
-    float: right;
-    min-width: 100px;
-    border: none;
-    font-weight: 700;
-    position: relative;
-    top: 20px;
-    background: linear-gradient(to bottom right, rgb(171, 80, 80), rgb(245, 116, 187), rgb(219, 219, 106));
-    border-radius: 20px;
+.search-container {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  margin-bottom: 20px;
+  z-index: 10; /* Add this to bring it to the front */
+}
 
-} */
-
-
+.search-container input[type="text"] {
+  padding: 10px;
+  width: 80%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  z-index: 10; /* Ensure input is in front */
+}
 
 .site-header .extras-menu .menu-item-hotline .hotline-content label {
     display: block;

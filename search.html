@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browse Categories</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+        .heading {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+        }
+        .heading h1 {
+            font-size: 1.6rem;
+            font-weight: 600;
+        }
+        .heading span {
+            color: #954c38;
+        }
+        .categories {
+            max-width: 964px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .categories-containers {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+        }
+        .box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            border-radius: 0.5rem;
+            background-color: white;
+            box-shadow: 1px 2px 11px 4px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s, background-color 0.3s;
+        }
+        .box img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            margin-bottom: 10px;
+        }
+        .box h2 {
+            font-weight: 500;
+            font-size: 1rem;
+            margin: 0;
+            margin-bottom: 5px;
+        }
+        .box span {
+            font-weight: 400;
+            font-size: 0.9rem;
+            color: #333;
+        }
+        .box:hover {
+            transform: scale(1.05);
+            background-color: #e2cedc;
+        }
+        .search-container {
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .search-container input[type="text"] {
+            padding: 10px;
+            width: 80%;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="search-container">
+        <input type="text" id="myinput" placeholder="What do you want?">
+    </div>
+    <section class="categories" id="categories">
+        <div class="heading">
+            <h1>Browse Our Hottest <br><span>Categories</span></h1>
+            <a href="#" class="btn">See All</a>
+        </div>
+        <div class="categories-containers">
+            <!-- Dynamically added boxes will appear here -->
+        </div>
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#myinput").on("keyup", function() {
+                var value = $(this).val().toLowerCase();
+                $(".box").filter(function() {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+                });
+            });
+        });
+
+        const categories = {
+            1: ['Apple', 'Apple is a good fruit', 'almand.jpg'],
+            2: ['Chocolate', 'Chocolate is sweet', 'choco.jpeg'],
+            3: ['Dates', 'Dates are nutritious', 'date.jpg'],
+            4: ['Pistachios', 'Pistachios are healthy', 'pistachios.jpg'],
+            5: ['Figs', 'Figs are delicious', 'fig.jpg'],
+        };
+
+        const container = document.querySelector('.categories-containers');
+
+        Object.values(categories).forEach(product => {
+            const box = document.createElement('div');
+            box.classList.add('box');
+
+            const img = document.createElement('img');
+            img.src = product[2];
+            img.alt = product[0];
+
+            const h2 = document.createElement('h2');
+            h2.textContent = product[0];
+
+            const span = document.createElement('span');
+            span.textContent = product[1];
+
+            box.appendChild(img);
+            box.appendChild(h2);
+            box.appendChild(span);
+
+            container.appendChild(box);
+        });
+    </script>
+</body>
+</html>
